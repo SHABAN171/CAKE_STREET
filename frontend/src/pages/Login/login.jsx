@@ -1,0 +1,66 @@
+import { Link } from "react-router-dom";
+
+function Login() {
+  return (
+    <div style={styles.container}>
+      <h2 style={styles.title}>Login</h2>
+
+      <form style={styles.form}>
+        <input
+          type="email"
+          placeholder="Email"
+          style={styles.input}
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          style={styles.input}
+          required
+        />
+
+        <button style={styles.button}>Login</button>
+      </form>
+
+      <p>
+        Don’t have an account? <Link to="/register">Register</Link>
+      </p>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f7f7f7",
+  },
+  title: {
+    marginBottom: "20px",
+  },
+  form: {
+    width: "300px",
+    display: "flex",
+    flexDirection: "column",
+  },
+  input: {
+    padding: "12px",
+    marginBottom: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+  },
+  button: {
+    padding: "12px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#6a2c70",
+    color: "white",
+    cursor: "pointer",
+  },
+};
+
+export default Login;
