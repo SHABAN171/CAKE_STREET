@@ -48,6 +48,15 @@ function Register() {
           100%{bottom:110%; opacity:0;}
         }
 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
+    </div>
+=======
+=======
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
         .register-btn {
           padding:16px 40px;
           font-size:20px;
@@ -96,7 +105,11 @@ function Register() {
           border-radius:10px;
           border:1px solid #ccc;
           font-size:16px;
+<<<<<<< HEAD
+          color:white;
+=======
           color:#333;
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
         }
 
         .submit-btn {
@@ -207,7 +220,48 @@ function Register() {
         )}
       </div>
     </>
+<<<<<<< HEAD
+>>>>>>> Stashed changes
   );
 }
 
+const styles = {
+  container: {
+    height: "100vh",
+    width: "100vw",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f7f7f7",
+  },
+  title: {
+    marginBottom: "20px",
+  },
+  form: {
+    width: "300px",
+    display: "flex",
+    flexDirection: "column",
+  },
+  input: {
+    padding: "12px",
+    marginBottom: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+  },
+  button: {
+    padding: "12px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#f08a5d",
+    color: "white",
+    cursor: "pointer",
+  },
+};
+
+=======
+  );
+}
+
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
 export default Register;

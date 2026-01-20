@@ -187,4 +187,41 @@ function Login() {
   );
 }
 
+<<<<<<< HEAD
+const styles = {
+  container: {
+    height: "100vh",
+    width: "100vw",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f7f7f7",
+  },
+  title: {
+    marginBottom: "20px",
+  },
+  form: {
+    width: "300px",
+    display: "flex",
+    flexDirection: "column",
+  },
+  input: {
+    padding: "12px",
+    marginBottom: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+  },
+  button: {
+    padding: "12px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#6a2c70",
+    color: "white",
+    cursor: "pointer",
+  },
+};
+
+=======
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
 export default Login;

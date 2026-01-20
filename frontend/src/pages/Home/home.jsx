@@ -190,4 +190,42 @@ function Home() {
   );
 }
 
+<<<<<<< HEAD
+const styles = {
+  container: {
+    height: "100vh",
+    width: "100vw",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#3a2d19ff",
+  },
+  title: {
+    fontSize: "36px",
+    marginBottom: "10px",
+  },
+  text: {
+    fontSize: "18px",
+    marginBottom: "30px",
+    textAlign: "center",
+    maxWidth: "400px",
+  },
+  buttonGroup: {
+    display: "flex",
+    gap: "20px",
+  },
+  button: {
+    padding: "12px 30px",
+    fontSize: "16px",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
+    backgroundColor: "#6a2c70",
+    color: "white",
+  },
+};
+
+=======
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
 export default Home;
