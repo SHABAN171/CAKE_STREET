@@ -10,6 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "frame": "^1.0.0-alpha.2",
+    "framer-motion": "^12.27.5",
+    "motion": "^12.27.5",
+>>>>>>> Stashed changes
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.11.0"
