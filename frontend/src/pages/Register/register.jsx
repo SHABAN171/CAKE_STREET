@@ -1,41 +1,62 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function Register() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>Create Account</h2>
+    <>
+      {/* Inline CSS */}
+      <style>{`
+        body { margin:0; font-family:sans-serif; }
+        .container {
+          height: 100vh;
+          width: 100vw;
+          background: linear-gradient(270deg,#fbc2eb,#a18cd1,#ff9a9e);
+          background-size: 600% 600%;
+          animation: gradientAnim 15s ease infinite;
+          overflow: hidden;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          position:relative;
+        }
 
-      <form style={styles.form}>
-        <input
-          type="text"
-          placeholder="Full Name"
-          style={styles.input}
-          required
-        />
+        @keyframes gradientAnim {
+          0%{background-position:0% 50%}
+          50%{background-position:100% 50%}
+          100%{background-position:0% 50%}
+        }
 
-        <input
-          type="email"
-          placeholder="Email"
-          style={styles.input}
-          required
-        />
+        /* Floating cakes / sparkles */
+        .floating span {
+          position:absolute;
+          font-size:32px;
+          animation: float 8s infinite ease-in-out;
+        }
 
-        <input
-          type="password"
-          placeholder="Password"
-          style={styles.input}
-          required
-        />
+        .floating span:nth-child(1){ left:5%; animation-delay:0s; }
+        .floating span:nth-child(2){ left:25%; animation-delay:2s; }
+        .floating span:nth-child(3){ left:50%; animation-delay:4s; }
+        .floating span:nth-child(4){ left:75%; animation-delay:6s; }
+        .floating span:nth-child(5){ left:90%; animation-delay:1s; }
 
-        <button style={styles.button}>Register</button>
-      </form>
+        @keyframes float {
+          0%{bottom:-50px; opacity:0;}
+          50%{opacity:1;}
+          100%{bottom:110%; opacity:0;}
+        }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
 =======
+=======
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
         .register-btn {
           padding:16px 40px;
           font-size:20px;
@@ -84,7 +105,11 @@ function Register() {
           border-radius:10px;
           border:1px solid #ccc;
           font-size:16px;
+<<<<<<< HEAD
           color:white;
+=======
+          color:#333;
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
         }
 
         .submit-btn {
@@ -195,6 +220,7 @@ function Register() {
         )}
       </div>
     </>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
   );
 }
@@ -233,4 +259,9 @@ const styles = {
   },
 };
 
+=======
+  );
+}
+
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
 export default Register;

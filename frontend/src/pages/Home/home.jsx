@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
@@ -185,10 +186,11 @@ function Home() {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </>
   );
 }
 
+<<<<<<< HEAD
 const styles = {
   container: {
     height: "100vh",
@@ -224,4 +226,6 @@ const styles = {
   },
 };
 
+=======
+>>>>>>> 495567076b5789dda611eb4abee5df9775692130
 export default Home;
