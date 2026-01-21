@@ -1,0 +1,28 @@
+/* src/pages/Cart.css */
+.cart-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-button {
+  margin-top: 1rem;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.checkout-button:hover {
+  background-color: #2563eb;
+}
