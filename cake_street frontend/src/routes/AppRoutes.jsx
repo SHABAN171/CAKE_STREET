@@ -94,7 +94,7 @@ function Header() {
       `}</style>
 
       <nav className="nav">
-        <div className="logo">🎂 Cake Street</div>
+        <div className="logo">CAKE STREET</div>
         <div className="nav-links">
           <Link to="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
             Home
