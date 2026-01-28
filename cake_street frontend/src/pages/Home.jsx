@@ -8,56 +8,56 @@ export default function Home() {
       name: "Chocolate Fudge Cake",
       description: "Rich chocolate cake with fudge frosting and chocolate shavings.",
       price: 25,
-      image: "https://images.unsplash.com/photo-1601971920544-3b0ec9edc9f6"
+      image: "https://images.pexels.com/photos/8104140/pexels-photo-8104140.jpeg"
     },
     {
       id: 2,
       name: "Vanilla Sponge Cake",
       description: "Light and fluffy vanilla sponge topped with whipped cream.",
       price: 20,
-      image: "https://images.unsplash.com/photo-1589308078054-20c1a7ec2e84"
+      image: "https://images.pexels.com/photos/19651268/pexels-photo-19651268.jpeg"
     },
     {
       id: 3,
       name: "Red Velvet Cake",
       description: "Classic red velvet with cream cheese frosting.",
       price: 30,
-      image: "https://images.unsplash.com/photo-1617196039967-f5a0e11839b1"
+      image: "https://images.pexels.com/photos/17745656/pexels-photo-17745656.jpeg"
     },
     {
       id: 4,
       name: "Lemon Drizzle Cake",
       description: "Zesty lemon cake with tangy lemon glaze.",
       price: 22,
-      image: "https://images.unsplash.com/photo-1617196039981-9f97d1c59f2c"
+      image: "https://images.pexels.com/photos/18962973/pexels-photo-18962973.jpeg"
     },
     {
       id: 5,
       name: "Carrot Cake",
       description: "Moist carrot cake with walnuts and cream cheese icing.",
       price: 28,
-      image: "https://images.unsplash.com/photo-1589307000453-0a0ec5838e4a"
+      image: "https://images.pexels.com/photos/1684018/pexels-photo-1684018.jpeg"
     },
     {
       id: 6,
       name: "Strawberry Shortcake",
       description: "Fresh strawberries with whipped cream layers.",
       price: 27,
-      image: ""
+      image: "https://images.pexels.com/photos/14677740/pexels-photo-14677740.jpeg"
     },
      {
       id: 7,
       name: "Strawberry Shortcake",
       description: "Fresh strawberries with whipped cream layers.",
       price: 27,
-      image: "https://images.unsplash.com/photo-1620911041312-959cb8ffb248"
+      image: "https://images.pexels.com/photos/19526812/pexels-photo-19526812.jpeg"
     },
      {
       id: 8,
       name: "Strawberry Shortcake",
       description: "Fresh strawberries with whipped cream layers.",
       price: 27,
-      image: "cake_street frontend/src/assets/image/pexels-cottonbro-4686838.jpg"
+      image: "https://images.pexels.com/photos/19651213/pexels-photo-19651213.jpeg"
     }
   ];
 
@@ -78,7 +78,7 @@ export default function Home() {
         .home-wrapper {
           width: 100vw;
           overflow-x: hidden;
-          background: #657699;
+          background: #030d22;
           min-height: 100vh;
           display: flex;
           flex-direction: column;
@@ -99,7 +99,7 @@ export default function Home() {
 
         .subtitle {
           text-align: center;
-          color: #555;
+          color: #28ec32;
           margin-bottom: 2rem;
         }
 
@@ -111,7 +111,7 @@ export default function Home() {
         }
 
         .cake-card {
-          background: #fff;
+          background: #c3dceb;
           border-radius: 8px;
           overflow: hidden;
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -181,8 +181,8 @@ export default function Home() {
         }
 
         footer {
-          background: #111827;
-          color: #e5e7eb;
+          background: #e6eaf1;
+          color: #01050e;
           padding: 2rem 1rem;
           margin-top: auto;
         }
@@ -197,19 +197,19 @@ export default function Home() {
 
         .footer-title {
           font-weight: bold;
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
         }
 
         .footer-text {
           font-size: 0.9rem;
-          color: #9ca3af;
+          color: #00040a;
         }
 
         .footer-bottom {
           text-align: center;
           margin-top: 1.5rem;
-          font-size: 0.8rem;
-          color: #9ca3af;
+          font-size: 1rem;
+          color: #000305;
         }
       `}</style>
 
@@ -250,18 +250,18 @@ export default function Home() {
         <footer>
           <div className="footer-content">
             <div>
-              <div className="footer-title">Cake Street</div>
+              <div className="footer-title">CAKE STREET</div>
               <div className="footer-text">
                 Freshly baked cakes made with love. Order online and pay offline.
               </div>
             </div>
             <div>
-              <div className="footer-title">Contact</div>
-              <div className="footer-text">📍 Bakery Street, City</div>
+              <div className="footer-title">CONTACT</div>
+              <div className="footer-text">📍 Makongo Street, City</div>
               <div className="footer-text">📞 +255 700 000 000</div>
             </div>
             <div>
-              <div className="footer-title">Hours</div>
+              <div className="footer-title">HOURS</div>
               <div className="footer-text">Mon - Sat: 8am - 8pm</div>
               <div className="footer-text">Sunday: Closed</div>
             </div>

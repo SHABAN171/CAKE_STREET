@@ -33,7 +33,7 @@ function Header() {
         }
 
         .nav {
-          background: linear-gradient(90deg, #1e3a8a, #2563eb);
+          background: linear-gradient(90deg, #22220b, #05163b);
           padding: 1rem;
           display: flex;
           justify-content: space-between;
@@ -44,7 +44,7 @@ function Header() {
         .logo {
           font-size: 1.4rem;
           font-weight: bold;
-          color: #fff;
+          color: linear-gradient(90deg, #4c446b, #22d3ee);
         }
 
         .nav-links {
@@ -85,11 +85,11 @@ function Header() {
         }
 
         footer {
-          background: #111827;
-          color: #9ca3af;
+          background-color: linear-gradient(90deg, #22220b, #05163b);
+          color: #8cbbc4;
           text-align: center;
           padding: 1rem;
-          font-size: 0.85rem;
+          font-size: 1rem;
         }
       `}</style>
 
