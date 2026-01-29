@@ -99,24 +99,24 @@ function Header() {
           <Link to="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/cart"
             className={`nav-link ${isActive("/cart") ? "active" : ""}`}
           >
             Cart
-          </Link>
+          </Link> */}
           <Link
             to="/orders"
             className={`nav-link ${isActive("/orders") ? "active" : ""}`}
           >
             Orders
           </Link>
-          <Link
+          {/* <Link
             to="/admin"
             className={`nav-link ${isActive("/admin") ? "active" : ""}`}
           >
             Admin
-          </Link>
+          </Link> */}
           <Link
             to="/login"
             className={`nav-link ${isActive("/login") ? "active" : ""}`}

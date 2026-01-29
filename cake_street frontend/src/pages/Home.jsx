@@ -158,30 +158,30 @@ export default function Home() {
           flex: 1;
           text-align: center;
           padding: 0.5rem;
-          color: #fff;
+          color: #e6eaec;
           border-radius: 4px;
           text-decoration: none;
           font-size: 0.9rem;
         }
 
         .btn-blue {
-          background: #2563eb;
+          background: #020e27;
         }
 
         .btn-blue:hover {
-          background: #1e40af;
+          background: #889cdd;
         }
 
         .btn-green {
-          background: #16a34a;
+          background: #053316;
         }
 
         .btn-green:hover {
-          background: #15803d;
+          background: #03220f;
         }
 
         footer {
-          background: #e6eaf1;
+          background: linear-gradient(135deg, #ddeaeb 0%, #193a68 100%);
           color: #01050e;
           padding: 2rem 1rem;
           margin-top: auto;
@@ -217,7 +217,7 @@ export default function Home() {
         <div className="home-content">
           <h1 className="title">Cake Street</h1>
           <p className="subtitle">
-            Order your favorite cake and pay after delivery or pickup
+            ORDER YOUR FAVORITE CAKE AND PAY AFTER DELIVERY OR PICKUP
           </p>
 
           <div className="cake-grid">
@@ -233,7 +233,7 @@ export default function Home() {
                   <div className="cake-desc">{cake.description}</div>
                   <div className="cake-price">${cake.price}</div>
                   <div className="actions">
-                    <Link to={`/cake/${cake.id}`} className="btn btn-blue">
+                    <Link to="/order" className="btn btn-blue">
                       Customize
                     </Link>
                     <Link to="/cart" className="btn btn-green">
@@ -262,7 +262,7 @@ export default function Home() {
             </div>
             <div>
               <div className="footer-title">HOURS</div>
-              <div className="footer-text">Mon - Sat: 8am - 8pm</div>
+              <div className="footer-text">MON - SUN: 8am - 8pm</div>
               <div className="footer-text">Sunday: Closed</div>
             </div>
           </div>
