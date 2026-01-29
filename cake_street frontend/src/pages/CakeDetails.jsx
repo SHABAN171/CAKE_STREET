@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./CakeDetails.css";
+
 
 export default function CakeDetails() {   // <--- Hapa default export
   const { id } = useParams();
