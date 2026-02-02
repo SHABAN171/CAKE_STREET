@@ -26,7 +26,7 @@ const CheckCircle = ({ className = "" }) => <span className={className} role="im
 // Inline CSS for Cake Street branding
 const styles = `
   /* ensure page covers entire viewport width */
-  .uuhtml, body {
+  .html, body {
     width: 100vw;
     margin: 0;
   }
