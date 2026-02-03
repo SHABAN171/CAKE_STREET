@@ -233,10 +233,10 @@ export default function Home() {
                   <div className="cake-desc">{cake.description}</div>
                   <div className="cake-price">${cake.price}</div>
                   <div className="actions">
-                    <Link to="/order" className="btn btn-blue">
+                    <Link to="/login" className="btn btn-blue">
                       Customize
                     </Link>
-                    <Link to="/cart" className="btn btn-green">
+                    <Link to="/login" className="btn btn-green">
                       Cart
                     </Link>
                   </div>

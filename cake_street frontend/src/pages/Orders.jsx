@@ -1,61 +1,157 @@
 import React, { useState } from "react";
 
-// --- added lightweight local components to replace missing imports ---
+/* ---------- UI COMPONENTS ---------- */
 const Button = ({ children, className = "", ...props }) => (
-  <button {...props} className={`px-3 py-2 ${className}`}>
+  <button {...props} className={`btn ${className}`}>
     {children}
   </button>
 );
 
-const Card = ({ children, className = "", ...props }) => (
-  <div {...props} className={`rounded-lg ${className}`}>
-    {children}
-  </div>
+const Card = ({ children, className = "" }) => (
+  <div className={`card ${className}`}>{children}</div>
 );
 
-const CardContent = ({ children, className = "", ...props }) => (
-  <div {...props} className={`${className}`}>{children}</div>
+const CardContent = ({ children }) => (
+  <div className="card-content">{children}</div>
 );
 
-// simple icon components (inline SVG / emoji fallback)
-const Cake = ({ className = "" }) => <span className={className} role="img" aria-label="cake">🎂</span>;
-const ShoppingCart = ({ className = "" }) => <span className={className} role="img" aria-label="cart">🛒</span>;
-const Truck = ({ className = "" }) => <span className={className} role="img" aria-label="truck">🚚</span>;
-const CheckCircle = ({ className = "" }) => <span className={className} role="img" aria-label="check">✅</span>;
+/* ---------- ICONS ---------- */
+const Cake = () => <span role="img" aria-label="cake">🎂</span>;
+const ShoppingCart = () => <span role="img" aria-label="cart">🛒</span>;
+const Truck = () => <span role="img" aria-label="truck">🚚</span>;
+const CheckCircle = () => <span role="img" aria-label="check">✅</span>;
 
-// Inline CSS for Cake Street branding
+/* ---------- INTERNAL CSS ---------- */
 const styles = `
-  /* ensure page covers entire viewport width */
-  .html, body {
-    width: 100vw;
-    margin: 0;
+  * {
+    box-sizing: border-box;
   }
 
-  .cake-gradient {
+  body {
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+  }
+
+  .page {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 20px;
     background: linear-gradient(135deg, #f472b6, #fb7185);
   }
-  .glass {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.85);
+
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #9d174d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
   }
+
+  .cake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+
+  .card-content {
+    padding: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .price {
+    color: #db2777;
+    font-weight: 600;
+  }
+
+  .btn {
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .btn-mpesa {
+    background: #16a34a;
+    color: white;
+  }
+
+  .btn-card {
+    background: #2563eb;
+    color: white;
+  }
+
   .btn-primary {
     background: linear-gradient(135deg, #ec4899, #f43f5e);
     color: white;
   }
-  .btn-primary:hover {
-    opacity: 0.9;
+
+  .orders-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #9d174d;
+    margin-bottom: 16px;
   }
+
+  .empty {
+    text-align: center;
+    color: #db2777;
+    padding: 40px;
+  }
+
   .badge {
     padding: 4px 12px;
-    border-radius: 9999px;
+    border-radius: 999px;
     font-size: 12px;
     font-weight: 500;
   }
-  .badge-baking { background: #fce7f3; color: #be185d; }
-  .badge-way { background: #ffedd5; color: #c2410c; }
-  .badge-done { background: #dcfce7; color: #166534; }
+
+  .baking {
+    background: #fce7f3;
+    color: #be185d;
+  }
+
+  .way {
+    background: #ffedd5;
+    color: #c2410c;
+  }
+
+  .done {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-id {
+    font-size: 12px;
+    color: #db2777;
+  }
+
+  .payment {
+    font-size: 12px;
+    background: #fce7f3;
+    color: #be185d;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
 `;
 
+/* ---------- DATA ---------- */
 const cakes = [
   { id: 1, name: "Chocolate Truffle Cake", price: 25 },
   { id: 2, name: "Vanilla Strawberry Cake", price: 22 },
@@ -67,19 +163,23 @@ const nextStatus = {
   "On the way": "Delivered",
 };
 
+/* ---------- PAGE ---------- */
 export default function OrderPage() {
   const [orders, setOrders] = useState([]);
 
   const placeOrder = (cake, payment) => {
-    const newOrder = {
-      id: `CS-${Math.floor(Math.random() * 100000)}`,
-      cake: cake.name,
-      price: cake.price,
-      date: new Date().toLocaleDateString(),
-      status: "In Baking",
-      payment,
-    };
-    setOrders([newOrder, ...orders]);
+    const orderId = `CS-${Math.floor(Math.random() * 100000)}`;
+    setOrders([
+      {
+        id: orderId,
+        cake: cake.name,
+        price: cake.price,
+        date: new Date().toLocaleDateString(),
+        status: "In Baking",
+        payment,
+      },
+      ...orders,
+    ]);
   };
 
   const advanceStatus = (id) => {
@@ -93,31 +193,32 @@ export default function OrderPage() {
   };
 
   return (
-    <> 
+    <>
       <style>{styles}</style>
-      <div className="min-h-screen cake-gradient p-4 sm:p-6 font-[Poppins]">
-        <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-pink-700 flex items-center gap-2">
-          <Cake className="w-7 h-7" /> Cake Street – Order Cakes
+
+      <div className="page">
+        <h1 className="title">
+          <Cake /> Cake Street – Order Cakes
         </h1>
 
-        {/* Cake Selection */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {/* Cakes */}
+        <div className="cake-grid">
           {cakes.map((cake) => (
-            <Card key={cake.id} className="rounded-2xl shadow glass">
-              <CardContent className="p-5 grid gap-3">
-                <p className="font-medium text-gray-800">{cake.name}</p>
-                <p className="text-pink-600 font-semibold">${cake.price}</p>
+            <Card key={cake.id}>
+              <CardContent>
+                <strong>{cake.name}</strong>
+                <span className="price">${cake.price}</span>
 
-                <div className="grid grid-cols-2 gap-2">
+                <div style={{ display: "grid", gap: "8px" }}>
                   <Button
+                    className="btn-mpesa"
                     onClick={() => placeOrder(cake, "M-Pesa")}
-                    className="bg-green-600 hover:bg-green-700 text-white rounded-xl text-sm"
                   >
                     M-Pesa
                   </Button>
                   <Button
+                    className="btn-card"
                     onClick={() => placeOrder(cake, "Card")}
-                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm"
                   >
                     Card
                   </Button>
@@ -128,56 +229,58 @@ export default function OrderPage() {
         </div>
 
         {/* Orders */}
-        <h2 className="text-xl sm:text-2xl font-semibold text-pink-700 mb-4">My Orders</h2>
+        <h2 className="orders-title">My Orders</h2>
 
         {orders.length === 0 ? (
-          <Card className="rounded-2xl border-dashed border-pink-200 bg-white">
-            <CardContent className="p-8 text-center text-pink-400">
-              <ShoppingCart className="mx-auto w-10 h-10 mb-2" />
-              <p className="font-medium">You have no orders yet</p>
-              <p className="text-sm">Choose a cake above to get started 🍰</p>
-            </CardContent>
+          <Card>
+            <div className="empty">
+              <ShoppingCart />
+              <p>No orders yet</p>
+            </div>
           </Card>
         ) : (
-          <div className="grid gap-4 pb-10">
-            {orders.map((order) => (
-              <Card key={order.id} className="rounded-2xl shadow bg-white">
-                <CardContent className="p-5 grid gap-3">
-                  <div className="flex justify-between items-center">
-                    <p className="text-sm text-pink-400">#{order.id}</p>
-                    <span className="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-600">
-                      {order.payment}
-                    </span>
-                  </div>
+          orders.map((order) => (
+            <Card key={order.id}>
+              <CardContent>
+                <div className="order-row">
+                  <span className="order-id">#{order.id}</span>
+                  <span className="payment">{order.payment}</span>
+                </div>
 
-                  <p className="font-medium text-gray-800">{order.cake}</p>
-                  <p className="text-sm text-gray-500">Date: {order.date}</p>
+                <strong>{order.cake}</strong>
+                <small>Date: {order.date}</small>
 
-                  {/* Status */}
-                  <div className="flex items-center gap-2 text-sm">
-                    {order.status === "In Baking" && <Cake className="w-4 h-4 text-pink-500" />}
-                    {order.status === "On the way" && <Truck className="w-4 h-4 text-orange-500" />}
-                    {order.status === "Delivered" && <CheckCircle className="w-4 h-4 text-green-600" />}
-                    <span className={`badge ${order.status === "In Baking" ? "badge-baking" : order.status === "On the way" ? "badge-way" : "badge-done"}`}>
-                      {order.status}
-                    </span>
-                  </div>
+                <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                  {order.status === "In Baking" && <Cake />}
+                  {order.status === "On the way" && <Truck />}
+                  {order.status === "Delivered" && <CheckCircle />}
+                  <span
+                    className={`badge ${
+                      order.status === "In Baking"
+                        ? "baking"
+                        : order.status === "On the way"
+                        ? "way"
+                        : "done"
+                    }`}
+                  >
+                    {order.status}
+                  </span>
+                </div>
 
-                  <div className="flex justify-between items-center">
-                    <p className="font-semibold text-pink-700">${order.price}</p>
-                    {order.status !== "Delivered" && (
-                      <Button
-                        onClick={() => advanceStatus(order.id)}
-                        className="btn-primary rounded-xl text-sm"
-                      >
-                        Update Status
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                <div className="order-row">
+                  <strong className="price">${order.price}</strong>
+                  {order.status !== "Delivered" && (
+                    <Button
+                      className="btn-primary"
+                      onClick={() => advanceStatus(order.id)}
+                    >
+                      Update Status
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))
         )}
       </div>
     </>
